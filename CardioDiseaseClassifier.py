@@ -14,7 +14,7 @@ noofmajorvessels = st.number_input("Number of major vessels:", min_value = 0, ma
 
 model = {'Support Vector Machine': 'SVM', 'K-Nearest Neighbours': 'KNN', 'Logistic Regression': 'LR', 'Naive Bayes': 'NB', 'Decision Tree': 'Dtree'}
 
-with open(model[algorithm]+'.pkl', 'rb') as file:  
+with open('Models/'+model[algorithm]+'.pkl', 'rb') as file:  
     classifier = pickle.load(file)
 
 cp = {'typical angina pain': 0,'atypical angina pain': 1,'non-anginal pain': 2,'asymptomatic pain': 3}
