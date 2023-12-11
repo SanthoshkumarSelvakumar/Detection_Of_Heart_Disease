@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import os
+import sklearn
 
 st.header("Detection of Heart Disease's presence")
 algorithm = st.selectbox('Algorithm to be performed:',('Support Vector Machine','K-Nearest Neighbours','Logistic Regression','Naive Bayes','Decision Tree'))
