@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
 st.header("Detection of Heart Disease's presence")
 algorithm = st.selectbox('Algorithm to be performed:',('Support Vector Machine','K-Nearest Neighbours','Logistic Regression','Naive Bayes','Decision Tree'))
@@ -13,6 +14,7 @@ slope = st.selectbox("Slope of the peak exercise ST segment:",('upsloping','flat
 noofmajorvessels = st.number_input("Number of major vessels:", min_value = 0, max_value = 3)
 
 model = {'Support Vector Machine': 'SVM', 'K-Nearest Neighbours': 'KNN', 'Logistic Regression': 'LR', 'Naive Bayes': 'NB', 'Decision Tree': 'Dtree'}
+st.write(os.getcwd())
 
 with open('Models/'+model[algorithm]+'.pkl', 'rb') as file:  
     classifier = pickle.load(file)
