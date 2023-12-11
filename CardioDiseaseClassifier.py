@@ -14,10 +14,9 @@ slope = st.selectbox("Slope of the peak exercise ST segment:",('upsloping','flat
 noofmajorvessels = st.number_input("Number of major vessels:", min_value = 0, max_value = 3)
 
 model = {'Support Vector Machine': 'SVM', 'K-Nearest Neighbours': 'KNN', 'Logistic Regression': 'LR', 'Naive Bayes': 'NB', 'Decision Tree': 'Dtree'}
-st.subheader("Yes")
-st.write(os.getcwd())
+os.chdir("/mount/src/detection_of_heart_disease/Models/")
 
-with open('Models/'+model[algorithm]+'.pkl', 'rb') as file:  
+with open(model[algorithm]+'.pkl', 'rb') as file:  
     classifier = pickle.load(file)
 
 cp = {'typical angina pain': 0,'atypical angina pain': 1,'non-anginal pain': 2,'asymptomatic pain': 3}
